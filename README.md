@@ -1,2 +1,2 @@
 # psty
-Psty Paste Servicee
+Psty Paste Service
