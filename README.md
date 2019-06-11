@@ -1,2 +1,2 @@
-# Psty-Public
-Public Source Code of https://psty.maxbridgland.com
+# psty
+Psty Paste Servicee
