@@ -6,9 +6,11 @@ from app.resources.helpers import generateOptions
 app = Flask(__name__)
 api = Api(app)
 
+app.home_url = 'https://psty.io'
+
 @app.route('/')
 def returnit():
-    return redirect('https://psty.io/new')
+    return redirect(app.home_url + '/new')
 
 @app.route('/new')
 def get():
@@ -18,6 +20,10 @@ def get():
 @app.route('/assets/css/<css>')
 def css(css):
     return send_file('templates/assets/css/{}'.format(css))
+
+@app.route('/assets/sass/<path>')
+def sass(path):
+    return send_file('templates/assets/sass/{}'.format(path))
 
 @app.route('/assets/js/<js>')
 def js(js):
