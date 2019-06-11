@@ -25,7 +25,7 @@ git clone https://github.com/M4cs/Psty-Pubilic
 
 Then you will need to install the Python modules required:
 
-```python
+```bash
 # Using virtualenv
 
 virtualenv .flaskapp
