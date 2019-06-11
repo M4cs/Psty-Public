@@ -8,7 +8,7 @@ api = Api(app)
 
 @app.route('/')
 def returnit():
-    return redirect('https://psty.maxbridgland.com/new')
+    return redirect('https://psty.io/new')
 
 @app.route('/new')
 def get():
@@ -31,4 +31,4 @@ from app.resources import upload
 from app.resources import pastes
 
 api.add_resource(upload.Upload, '/upload')
-api.add_resource(pastes.Pastes, '/pastes')
+api.add_resource(pastes.Pastes, '/p')

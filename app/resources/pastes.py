@@ -4,7 +4,7 @@ from flask_restful import Resource, reqparse
 
 def paste_parser():
     parser = reqparse.RequestParser()
-    parser.add_argument('name', required=True)
+    parser.add_argument('q', required=True)
     return parser
 
 class Pastes(Resource):
@@ -12,4 +12,4 @@ class Pastes(Resource):
         parser = paste_parser()
         data = parser.parse_args()
         headers = {'Content-Type': 'text/html'}
-        return make_response(render_template('pastes/{}'.format(data['name'])), 200, headers)
+        return make_response(render_template('pastes/{}'.format(data['q'])), 200, headers)

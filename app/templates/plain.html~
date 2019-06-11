@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html style="background-color: black">
 <head>
-    <link rel="icon" href="https://cdn.maxbridgland.com/psty-icon.ico">
     <link href="assets/css/prism.css" rel="stylesheet" />
     <link href="assets/css/bulma.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/bfef34323a.js"></script>

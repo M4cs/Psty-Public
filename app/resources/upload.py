@@ -26,23 +26,23 @@ class Upload(Resource):
                 with open('app/templates/index.html', 'r') as html_file:
                     new_html = html_file.read().replace('class="language-{{language}}"', 'class="lang-%s"' % lang_short).replace("{{lang}}", language_proper)
                     new_html = new_html.replace("{{code}}", code)
-                    uid = str(uuid4())
+                    uid = str(uuid4()).split('-')[0]
                     filename = uid + '-' + title
                     with open('app/templates/pastes/{}.html'.format(filename), 'w') as out:
                         out.write(new_html)
                         out.close()
                     html_file.close()
-                return redirect('https://psty.maxbridgland.com/pastes?name={}.html'.format(filename))
+                return redirect('https://psty.io/p?q={}.html'.format(filename))
             if data['lang'] == "Plaintext":
                 with open('app/templates/plain.html', 'r') as html_file_1:
                     new_html = html_file_1.read().replace('{{code}}', code)
-                    uid = str(uuid4())
+                    uid = str(uuid4()).split('-')[0]
                     filename = uid + '-' + title
                     with open('app/templates/pastes/{}.html'.format(filename), 'w') as out:
                         out.write(new_html)
                         out.close()
                     html_file_1.close()
-                return redirect('https://psty.maxbridgland.com/pastes?name={}.html'.format(filename))
+                return redirect('https://psty.io/p?q={}.html'.format(filename))
         return {
             'status': 400
         }
